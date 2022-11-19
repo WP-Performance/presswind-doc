@@ -4,7 +4,7 @@ export default defineAppConfig({
     description:
       'Presswind is a WordPress Starter Theme based on TailwindCSS and ViteJS.',
     url: 'https://presswind-doc.wp-performance.com',
-    image: '/social-card-preview.png',
+    image: '/screenshot.png',
     socials: {
       github: 'WP-Performance',
     },
@@ -18,11 +18,16 @@ export default defineAppConfig({
       filter: [],
     },
     header: {
-      title: false,
+      title: 'PressWind',
       logo: true,
-      showLinkIcon: false,
+      showLinkIcon: true,
     },
     footer: {
+      credits: {
+        text: 'wp-performance.com',
+        icon: false,
+        href: 'https://wp-performance.com',
+      },
       icons: [],
     },
   },
