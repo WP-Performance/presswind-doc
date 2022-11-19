@@ -3,7 +3,7 @@ export default defineAppConfig({
     title: 'Presswind, WordPress Starter Theme TailwindCSS and ViteJS',
     description:
       'Presswind is a WordPress Starter Theme based on TailwindCSS and ViteJS.',
-    url: 'https://presswind.wp-performance.com',
+    url: 'https://presswind-doc.wp-performance.com',
     image: '/social-card-preview.png',
     socials: {
       github: 'WP-Performance',
