@@ -1,0 +1,62 @@
+<template>
+  <div class="screen-block">
+    <div>
+      <img :src="(screen[0] as any)" loading="lazy" :alt="screen[1] || ''" />
+    </div>
+    <div>
+      <h2 v-if="$slots.title" class="title">
+        <ContentSlot :use="$slots.title" unwrap="p" />
+      </h2>
+      <ContentSlot :use="$slots.text" />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+defineProps<{
+  screen: string[]
+}>()
+</script>
+
+<style scoped lang="ts">
+css({
+    '.screen-block': {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem',
+        margin: '8rem 0',
+        '@mq.lg': {
+            flexDirection: 'row',
+            gap: '4rem',
+            margin: '10rem 0'
+        }
+    },
+    'img': {
+        borderRadius: '1rem',
+        filter: 'drop-shadow(0 0 0.75rem gray)'
+    },
+    '.screen-block > div': {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'centrer'
+    },
+    '.screen-block > div:first-child': {
+        minWidth: 'auto',
+        '@mq.lg': {
+            minWidth: '53%'
+        }
+    },
+    '.screen-block > div:last-child': {
+        padding: '0 1rem'
+    },
+    'h2': {
+        fontSize: 'clamp(2.2rem, 4vw, 2.8rem)',
+        fontWeight: 'bold',
+        lineHeight: 'clamp(2rem, 4vw, 2.9rem)',
+        color: '{docus.text.color.primary}'
+    },
+    'p': {
+        fontSize: '1.3rem',
+    }
+})
+</style>
