@@ -1,5 +1,29 @@
 export default defineAppConfig({
   docus: {
-    title: 'My Docs'
-  }
+    title: 'Presswind, WordPress Starter Theme TailwindCSS and ViteJS',
+    description:
+      'Presswind is a WordPress Starter Theme based on TailwindCSS and ViteJS.',
+    url: 'https://presswind.wp-performance.com',
+    image: '/social-card-preview.png',
+    socials: {
+      github: 'WP-Performance',
+    },
+    github: {
+      root: 'content',
+      edit: true,
+      contributors: false,
+    },
+    aside: {
+      level: 1,
+      filter: [],
+    },
+    header: {
+      title: 'Presswind, The WordPress starter',
+      logo: false,
+      showLinkIcon: false,
+    },
+    footer: {
+      icons: [],
+    },
+  },
 })
