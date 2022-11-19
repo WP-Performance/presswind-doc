@@ -1,3 +1,5 @@
 <template>
-  <nuxt-img src="" />
+  <strong>
+    Presswind Doc.
+  </strong>
 </template>

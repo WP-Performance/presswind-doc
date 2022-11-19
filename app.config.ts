@@ -18,8 +18,8 @@ export default defineAppConfig({
       filter: [],
     },
     header: {
-      title: 'Presswind, The WordPress starter',
-      logo: false,
+      title: false,
+      logo: true,
       showLinkIcon: false,
     },
     footer: {
