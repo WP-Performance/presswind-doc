@@ -13,10 +13,6 @@ export default defineAppConfig({
       edit: true,
       contributors: false,
     },
-    aside: {
-      level: 1,
-      filter: [],
-    },
     header: {
       title: 'PressWind',
       logo: true,

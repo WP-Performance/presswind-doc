@@ -68,7 +68,7 @@ css({
         display: 'flex',
     },
     '.hero-home': {
-        padding: '4rem 0',
+        padding: '{space.20} 0',
         textAlign: 'center'
     },
     '.title': {
@@ -80,11 +80,14 @@ css({
     },
     '.subtitle': {
         fontSize: 'clamp(3rem, 6vw, 4.2rem)',
-        color: '#333',
+        color: '{colors.black}',
         lineHeight: 'clamp(3rem, 7vw, 3.9rem)',
         fontWeight: 'bold',
         maxWidth: '80%',
         margin: '0 auto',
+        '@dark': {
+            color: '{colors.gray.300}',
+        }
     },
     '.action': {
         padding: '{space.20} 0',
@@ -94,17 +97,45 @@ css({
     },
     '.githubInfo': {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        flexDirection: 'column',
+        '@mq.lg': {
+            flexDirection: 'row',
+        }
     },
     '.githubInfo > div': {
         display: 'flex',
         alignItems: 'center',
         border: '1px {colors.gray.600} solid',
-        margin: '0 {space.2}',
+        margin: '{space.2} auto',
         padding: '{space.1} {space.2}',
         borderRadius: '{space.1-5}',
         backgroundColor: '{colors.gray.100}',
-        fontSize: '{text.lg.fontSize}'
+        fontSize: '{text.lg.fontSize}',
+        whiteSpace: 'nowrap',
+        '@dark': {
+            border: '1px {colors.gray.400} solid',
+            color: '{colors.gray.300}',
+            backgroundColor: '{colors.gray.800}',
+        },
+        '@mq.lg': {
+            margin: '0 {space.2}',
+        },
+    },
+    '.githubInfo > div a': {
+        borderRadius: '{space.1-5}',
+        'display': 'block',
+        padding: '{space.1} {space.2}',
+        '&:hover': {
+            backgroundColor: '{colors.gray.200}',
+            '@dark': {
+                backgroundColor: '{colors.gray.600}',
+            }
+        },
+    },
+    '.githubInfo > div:last-child': {
+        padding: '0'
     },
     '.githubInfo > div:first-child svg': {
         color: '{colors.yellow.500}',

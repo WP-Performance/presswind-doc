@@ -1,7 +1,7 @@
 <template>
-  <strong class="logo">
+  <div class="logo">
     PressWind
-  </strong>
+  </div>
 </template>
 
 <style scoped lang="ts">

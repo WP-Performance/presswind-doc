@@ -33,7 +33,10 @@ css({
     },
     'img': {
         borderRadius: '1rem',
-        filter: 'drop-shadow(0 0 0.75rem gray)'
+        filter: 'drop-shadow(0 0 0.75rem {colors.gray.600})',
+        '@dark': {
+            filter: 'drop-shadow(0 0 1.25rem {colors.primary.300})',
+        }
     },
     '.screen-block > div': {
         display: 'flex',
