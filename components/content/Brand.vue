@@ -1,34 +1,37 @@
+<script setup lang="ts">
+const brands = [
+  {
+    src: '/tailwind.webp',
+    width: 244,
+    height: 173,
+    name: 'tailwindCSS',
+  },
+  {
+    src: '/vitejs.webp',
+    width: 300,
+    height: 300,
+    name: 'ViteJS',
+  },
+  {
+    src: '/gutenberg.webp',
+    width: 150,
+    height: 150,
+    name: 'Gutenberg',
+  },
+]
+</script>
+
 <template>
   <div class="brand">
-    <div>
+    <div v-for="brand of brands">
       <img
-        src="/tailwind.webp"
-        width="244"
-        height="173"
+        :src="brand.src"
+        :width="brand.width"
+        :height="brand.height"
         loading="lazy"
-        alt="tailwindCSS"
+        :alt="brand.name"
       />
-      <figcaption>TailwindCSS</figcaption>
-    </div>
-    <div>
-      <img
-        src="/vitejs.webp"
-        width="300"
-        height="300"
-        loading="lazy"
-        alt="vitejs"
-      />
-      <figcaption>ViteJS</figcaption>
-    </div>
-    <div>
-      <img
-        src="/gutenberg.webp"
-        width="150"
-        height="150"
-        loading="lazy"
-        alt="gutenberg"
-      />
-      <figcaption>Gutenberg</figcaption>
+      <figcaption>{{ brand.name }}</figcaption>
     </div>
   </div>
 </template>
