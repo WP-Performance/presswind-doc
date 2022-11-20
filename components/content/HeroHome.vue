@@ -4,19 +4,25 @@ defineProps<{
   secondary: string[]
 }>()
 
-// const { data: repoInfos } = useAsyncData('repoInfos', async () => {
-//   const response = await $fetch(
-//     'https://api.github.com/repos/WP-Performance/press-wind',
-//   )
-//   return response
-// })
+const { data: repoInfos, pending: repoPending } = useAsyncData(
+  'repoInfos',
+  async () => {
+    const response: { stargazers_count: number } = await $fetch(
+      'https://api.github.com/repos/WP-Performance/press-wind',
+    )
+    return response
+  },
+)
 
-// const { data: tagInfos } = useAsyncData('tagInfos', async () => {
-//   const response = await $fetch(
-//     'https://api.github.com/repos/WP-Performance/press-wind/tags',
-//   )
-//   return response
-// })
+const { data: tagInfos, pending: tagPending } = useAsyncData(
+  'tagInfos',
+  async () => {
+    const response: { name: string; zipball_url: string }[] = await $fetch(
+      'https://api.github.com/repos/WP-Performance/press-wind/tags',
+    )
+    return response
+  },
+)
 </script>
 
 <template>
@@ -41,36 +47,68 @@ defineProps<{
         {{ secondary[0] }}
       </a>
     </div>
+    <div class="githubInfo">
+      <div v-if="!repoPending && repoInfos">
+        <Icon name="mdi:star" size="24" />
+        {{ repoInfos.stargazers_count }}
+      </div>
+      <div v-if="!tagPending && tagInfos">
+        <a :href="tagInfos[0]?.zipball_url" target="_blank">
+          <Icon name="mdi:download-box" size="24" />
+          Download the last version {{ tagInfos[0]?.name }}
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
-<style scoped>
-.hero-home {
-  padding: 4rem 0;
-  text-align: center;
-}
-.title {
-  font-size: clamp(4rem, 8vw, 5.75rem);
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to right, #bd34fe, #41d1ff);
-  font-weight: bold;
-}
-
-.subtitle {
-  font-size: clamp(3rem, 6vw, 4.2rem);
-  color: #333;
-  line-height: clamp(3rem, 7vw, 3.9rem);
-  font-weight: bold;
-  max-width: 80%;
-  margin: 0 auto;
-}
-
-.action {
-  padding: 4rem 0;
-}
-
-.cta {
-  margin-right: 1rem;
-}
+<style scoped lang="ts">
+css({
+    '.githubInfo': {
+        display: 'flex',
+    },
+    '.hero-home': {
+        padding: '4rem 0',
+        textAlign: 'center'
+    },
+    '.title': {
+        fontSize: 'clamp(4rem, 8vw, 5.75rem)',
+        color: 'transparent',
+        backgroundClip: 'text',
+        backgroundImage: 'linear-gradient(to right, #bd34fe, #41d1ff)',
+        fontWeight: 'bold'
+    },
+    '.subtitle': {
+        fontSize: 'clamp(3rem, 6vw, 4.2rem)',
+        color: '#333',
+        lineHeight: 'clamp(3rem, 7vw, 3.9rem)',
+        fontWeight: 'bold',
+        maxWidth: '80%',
+        margin: '0 auto',
+    },
+    '.action': {
+        padding: '{space.20} 0',
+    },
+    '.cta': {
+        marginRight: '{space.4}'
+    },
+    '.githubInfo': {
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    '.githubInfo > div': {
+        display: 'flex',
+        alignItems: 'center',
+        border: '1px {colors.gray.600} solid',
+        margin: '0 {space.2}',
+        padding: '{space.1} {space.2}',
+        borderRadius: '{space.1-5}',
+        backgroundColor: '{colors.gray.100}',
+        fontSize: '{text.lg.fontSize}'
+    },
+    '.githubInfo > div:first-child svg': {
+        color: '{colors.yellow.500}',
+        marginRight: '{space.1}'
+    }
+});
 </style>

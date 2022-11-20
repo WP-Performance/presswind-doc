@@ -53,7 +53,7 @@ css({
         fontSize: 'clamp(2.2rem, 4vw, 2.8rem)',
         fontWeight: 'bold',
         lineHeight: 'clamp(2rem, 4vw, 2.9rem)',
-        color: '{docus.text.color.primary}'
+        color: '{colors.primary.500}'
     },
     'p': {
         fontSize: '1.3rem',
