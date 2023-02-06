@@ -42,7 +42,7 @@ css({
         display: 'flex',
         item: 'center',
         margin: '0 auto',
-        '@mq.lg': {
+        '@lg': {
             maxWidth: '50rem'
         }
     },
@@ -58,7 +58,7 @@ css({
         width: '100%',
         height: 'auto',
         marginBottom: '1rem',
-        '@mq.lg': {
+        '@lg': {
             maxWidth: '130px'
         }
     },
@@ -67,7 +67,7 @@ css({
         width: '100%',
         height: 'auto',
         marginBottom: '1rem',
-        '@mq.lg': {
+        '@lg': {
             maxWidth: '105px'
         }
     }

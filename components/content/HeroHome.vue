@@ -64,9 +64,6 @@ const { data: tagInfos, pending: tagPending } = useAsyncData(
 
 <style scoped lang="ts">
 css({
-    '.githubInfo': {
-        display: 'flex',
-    },
     '.hero-home': {
         padding: '{space.20} 0',
         textAlign: 'center'
@@ -100,7 +97,7 @@ css({
         justifyContent: 'center',
         alignItems: 'flex-start',
         flexDirection: 'column',
-        '@mq.lg': {
+        '@lg': {
             flexDirection: 'row',
         }
     },
@@ -110,7 +107,7 @@ css({
         border: '1px {colors.gray.600} solid',
         margin: '{space.2} auto',
         padding: '{space.1} {space.2}',
-        borderRadius: '{space.1-5}',
+        borderRadius: '{space.2}',
         backgroundColor: '{colors.gray.100}',
         fontSize: '{text.lg.fontSize}',
         whiteSpace: 'nowrap',
@@ -119,7 +116,7 @@ css({
             color: '{colors.gray.300}',
             backgroundColor: '{colors.gray.800}',
         },
-        '@mq.lg': {
+        '@lg': {
             margin: '0 {space.2}',
         },
     },

@@ -25,7 +25,7 @@ css({
         flexDirection: 'column',
         gap: '2rem',
         margin: '8rem 0',
-        '@mq.lg': {
+        '@lg': {
             flexDirection: 'row',
             gap: '4rem',
             margin: '10rem 0'
@@ -33,6 +33,7 @@ css({
     },
     'img': {
         borderRadius: '1rem',
+        // maxWidth:
         filter: 'drop-shadow(0 0 0.75rem {colors.gray.600})',
         '@dark': {
             filter: 'drop-shadow(0 0 1.25rem {colors.primary.300})',
@@ -41,16 +42,16 @@ css({
     '.screen-block > div': {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'centrer'
+        alignItems: 'flex-start',
     },
     '.screen-block > div:first-child': {
         minWidth: 'auto',
-        '@mq.lg': {
+        '@lg': {
             minWidth: '53%'
         }
     },
     '.screen-block > div:last-child': {
-        padding: '0 1rem'
+        padding: '1rem'
     },
     'h2': {
         fontSize: 'clamp(2.2rem, 4vw, 2.8rem)',

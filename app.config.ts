@@ -9,9 +9,11 @@ export default defineAppConfig({
       github: 'WP-Performance',
     },
     github: {
-      root: 'content',
+      dir: undefined,
+      branch: 'main',
+      repo: 'press-wind',
+      owner: 'WP-Performance',
       edit: true,
-      contributors: false,
     },
     header: {
       title: 'PressWind',
@@ -21,7 +23,7 @@ export default defineAppConfig({
     footer: {
       credits: {
         text: 'wp-performance.com',
-        icon: false,
+        icon: '',
         href: 'https://wp-performance.com',
       },
       icons: [],
