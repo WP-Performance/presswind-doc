@@ -1,9 +1,9 @@
-import { defineTheme, palette } from 'pinceau'
+import { defineTheme } from 'pinceau'
 import theme from '@nuxt-themes/tokens/config'
 
 export default defineTheme({
   colors: {
-    primary: palette('rgb(190, 24, 90)'),
+    primary: 'rgb(190, 24, 90)',
     white: '#ffffff',
     black: '#0c0c0d',
     gray: {
