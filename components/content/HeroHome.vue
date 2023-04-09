@@ -55,7 +55,7 @@ const { data: tagInfos, pending: tagPending } = useAsyncData(
       <div v-if="!tagPending && tagInfos">
         <a :href="tagInfos[0]?.zipball_url" target="_blank">
           <Icon name="mdi:download-box" size="24" />
-          Download the last version {{ tagInfos[0]?.name }}
+          Download the latest version {{ tagInfos[0]?.name }}
         </a>
       </div>
     </div>
